@@ -1,0 +1,26 @@
+
+
+
+  <div class="container mt-5">
+  
+    <h2>Category&Product</h2>
+    
+    <table class="table table-striped">
+      <thead>
+          <tr>
+            <th>Product Name</th>
+            <th>Category Name</th>
+            <th>Price</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let i of Repdata  | paginate: { itemsPerPage: 3, currentPage: p }">
+          <td>{{ i.Productname }}</td>
+          <td>{{ i.Catname }}</td>
+          <td>{{ i.Price }}</td>
+        </tr>
+      </tbody>
+    </table>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+  </div>

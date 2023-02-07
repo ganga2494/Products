@@ -1,0 +1,51 @@
+<div class="pull-right">
+  <button class="btn btn-success btn-lg float-right" color="primary" type="button" style = "position:relative; left:1080px; top:2px; background-color:green;"
+  routerLink="/addp">+
+      Product</button>
+  </div>
+
+  
+   
+  
+ 
+<div class ="container-fluid" *ngIf="Repdata">
+   
+  <h1>List Of Products</h1>
+  
+  <div class="jumbotron"  *ngFor="let i of Repdata | paginate: { itemsPerPage: 2, currentPage: p } ">
+    
+  <div class="row" >
+      <div class="col-sm-3 card">
+      <img class="card-img" src="http://localhost:8080/{{i.image.path}}" >    
+     
+  </div>
+  
+   <div class="col-sm-9 card" >
+     
+
+      
+      <h5 class="card-title">Name: {{i.Name}} </h5>
+      <h5 class="card-title">Price: {{i.Price}} </h5>
+      <p class="class-text"> Description: {{i.description}}</p>
+      <p>  </p>
+      <button class="btn btn-info glyphicon glyphicon-tag" >Add to Cart<span class="glyphicon glyphicon-tag"></span></button> 
+  
+   
+  
+      </div>
+  </div>
+  
+  
+  </div>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+  <div class="center" >
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+     
+  
+    </div>

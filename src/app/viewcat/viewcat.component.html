@@ -1,0 +1,30 @@
+<div class="pull-right">
+    <button class="btn btn-success btn-lg float-right" color="primary" type="button" style = "position:relative; left:1200px; top:2px; background-color:green;"
+      routerLink="/addc">+
+      Category</button>
+  </div>
+
+
+  <div class="container mt-5">
+  
+    <h2>Category</h2>
+    
+    <table class="table table-striped">
+      <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>productcount</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let i of Repdata  | paginate: { itemsPerPage: 3, currentPage: p }">
+          <td>{{ i.Name }}</td>
+          <td>{{ i.description }}</td>
+          <td>{{ i.productcount }}</td>
+        </tr>
+      </tbody>
+    </table>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+  </div>

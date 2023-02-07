@@ -1,0 +1,50 @@
+<h1>Add Product</h1>
+   
+<form #proForm="ngForm" (ngSubmit)="submit(proForm.value)">
+   
+  <div class="form-group">
+      <label for="Name">Name</label>
+      <input required minlength="2" maxlength="30" ngModel name="Name" type="text" #Name="ngModel" class="form-control" id="Name">
+      <div class="alert alert-danger" *ngIf="Name.touched && !Name.valid">
+        Name is required
+      </div>
+  </div>
+  <div class="form-group">
+    <label for="Name">Price</label>
+    <input required minlength="1" maxlength="30" (keypress)="keyPress($event)" ngModel name="Price" type="text" #Price="ngModel" class="form-control" id="Name">
+    <div class="alert alert-danger" *ngIf="Price.touched && !Price.valid">
+      price is required
+    </div>
+</div>
+<div class="form-group">
+    <label for="Name">Category</label>
+<select class="form-control" [(ngModel)]="selected"  name="category"  id="category" (ngModelChange)="onChangeofOptions($event)" required>
+
+<option [ngValue]="null" disabled>Category </option>
+
+<option *ngFor="let obj of Repdata" [ngValue]="obj"> {{obj.Name}} </option>
+
+</select>
+
+
+   </div>
+
+   <div class="col-sm-6">
+    <label class="col-form-label form-control-label">Image</label>
+    <input type="file" class="form-control" ngModel name="image"  #image="ngModel" (change)="onFileSelected($event,'image')">
+    <!-- <div [hidden]="image.untouched || image.valid">
+      <div *ngIf="image.errors && (image.dirty || image.touched)">
+        <p *ngIf="image.errors.required" class="text-danger">Please Upload Property Document</p>
+      </div>
+    </div> -->
+   </div>
+
+  <div class="form-group">
+      <label for="description">Description</label>
+      <textarea required ngModel #description="ngModel" name="description" id="description" cols="30" rows="5" class="form-control"></textarea>
+     
+  </div>
+    
+  <button class="btn btn-primary" type="submit" >Submit</button>
+  
+</form>

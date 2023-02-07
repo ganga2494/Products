@@ -1,0 +1,65 @@
+.container-fluid {
+    padding: 50px;
+    /* padding: 20px; */
+    }
+/* 
+* {box-sizing: border-box} */
+
+/* Container needed to position the overlay. Adjust the width as needed */
+.tab9 {position:absolute;left:450px; color:red;}
+
+
+/* Make the image to responsive */
+.jumbotron {
+    padding: 0px;
+
+}
+.row:hover {
+    box-shadow: 5px 5px 5px 5px rgb(236, 236, 236);
+}
+.btn {
+    width: 20%;;
+}
+#test {
+    background-color: white;
+}
+.card-title , .class-text{
+    margin:15px;
+}
+.card {
+    position:relative; 
+    display:block;
+    max-width:100%; 
+    height:auto;
+}
+/* img {
+    width: 35%;
+    display: inline-block;
+    min-height: 285px;
+    background: #d4e0e7;
+    float: left;
+    z-index: 100;
+} */
+
+/* The overlay effect - lays on top of the container and over the image */
+
+/* When you mouse over the container, fade in the overlay title */
+
+/* .modal-dialog {
+    width: 100%;
+    height: 100%;
+    margin-left: 500px;
+  }
+  
+  .modal-content {
+    height: auto;
+    min-height: 100%;
+    min-width: 90%;
+    border-radius: 0;
+  } */
+  /* .modal-header .modal-dialog {
+      width: 1000%;
+  } */
+  .modal-content {
+      width: 140%;
+  }
